@@ -1,0 +1,76 @@
+import java.nio.charset.StandardCharsets
+import java.time.Instant
+
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '2.7.5'
+    id 'io.spring.dependency-management' version '1.0.15.RELEASE'
+    id 'com.github.johnrengelman.shadow' version '7.1.2'
+}
+
+group = 'me.kamelajda'
+version = '1.0.0'
+sourceCompatibility = '12'
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter'
+    implementation 'org.springframework.boot:spring-boot-autoconfigure:2.7.5'
+    implementation 'org.springframework.boot:spring-boot-starter-logging:2.7.5'
+    implementation 'org.springframework:spring-context:5.3.23'
+    implementation 'org.springframework.shell:spring-shell-starter:2.1.3'
+
+    implementation 'com.squareup.okhttp3:okhttp:4.10.0'
+    implementation 'com.google.code.gson:gson:2.10'
+    implementation 'org.java-websocket:Java-WebSocket:1.5.3'
+    implementation 'com.github.JnCrMx:discord-game-sdk4j:-SNAPSHOT'
+
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+}
+
+build.dependsOn jar
+
+compileJava {
+    options.compilerArgs << '-parameters'
+}
+
+artifacts {
+    archives shadowJar
+}
+
+shadowJar {
+    manifest {
+        attributes 'Implementation-Title': 'ValorantRPC'
+        attributes 'Implementation-Version': version
+        attributes 'Build-Time': Instant.now().toEpochMilli()
+        attributes 'Main-Class': 'me.kamelajda.valorantrpc.ValorantRPCApplication'
+    }
+
+    mergeServiceFiles()
+    mergeGroovyExtensionModules()
+
+    mergeServiceFiles()
+    append 'META-INF/spring.handlers'
+    append 'META-INF/spring.schemas'
+    append 'META-INF/spring.tooling'
+    append 'META-INF/spring.factories'
+}
+
+configurations {
+    compileOnly {
+        extendsFrom annotationProcessor
+    }
+}
+
+compileJava.options.encoding = StandardCharsets.UTF_8
