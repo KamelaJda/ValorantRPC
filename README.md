@@ -11,18 +11,32 @@
 
 [![Crowdin](https://badges.crowdin.net/valorantrpc/localized.svg)](https://crowdin.com/project/valorantrpc)
 
-## Notifications about new albums, songs and feats of your favorite artists!
+## Discord Rich Presence implementation for Riot Game: VALORANT
 
-### Bot Features
-- (see top)
-- Multi-language support for server and user
-- Possible configuration on server
-- Artist subscriptions for servers and users
+### Features
+- Multi-Language support
+- Party support
+- Fully configurable (`config edit` command)
+- In Game/Menu/Queue status
+- Possibility to send invitations!
+
+### How to start?
+1. Download [last version](https://github.com/KamelaJda/ValorantRPC/releases)
+2. Unzip folder
+3. Run `start.bat` file (Discord must be enabled)
+
+### Screens
+![](https://cdn.discordapp.com/attachments/1042160490488528916/1042160502270345266/image.png)
+![](https://cdn.discordapp.com/attachments/1042160490488528916/1042160557387690024/image.png)
+![](https://cdn.discordapp.com/attachments/1042160490488528916/1042160612689592421/image.png)
+![](https://cdn.discordapp.com/attachments/1042160490488528916/1042160697787830342/image.png)
+![](https://cdn.discordapp.com/attachments/1042160490488528916/1042160853992079360/image.png)
+![](https://media.discordapp.net/attachments/1042160490488528916/1042162425551654912/image.png)
+
+### Thanks for testers
+✨[xKubsoneQ](https://github.com/xKubsoneQ)
 
 ### Useful links
-- [Add bot to your server](https://discord.com/oauth2/authorize?client_id=968882980720373840&permissions=414464724032&scope=bot+applications.commands)
-- [Report a bug](https://github.com/KamelaJda/SpotifyB0T/issues/new?assignees=KamelaJda&labels=bug&template=bug_report.md&title=%5BBUG%5D)
-- [Feature request](https://github.com/KamelaJda/SpotifyB0T/issues/new?assignees=KamelaJda&labels=feature&template=feature_request.md&title=%5BFEATURE%5D)
-
-### Do you want to support the project?
-You can create a [Translation](https://crowdin.com/project/spotifyb0t)!
+- [Download last version](https://github.com/KamelaJda/ValorantRPC/releases)
+- [Report a bug](https://github.com/KamelaJda/ValorantRPC/issues/new?assignees=KamelaJda&labels=bug&template=bug_report.md&title=%5BBUG%5D)
+- [Feature request](https://github.com/KamelaJda/ValorantRPC/issues/new?assignees=KamelaJda&labels=feature&template=feature_request.md&title=%5BFEATURE%5D)
