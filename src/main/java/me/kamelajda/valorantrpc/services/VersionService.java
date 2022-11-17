@@ -27,6 +27,7 @@ public class VersionService {
     private final OkHttpClient okHttpClient;
     private final LanguageService languageService;
     private Date build;
+    private String version;
 
     public VersionService(OkHttpClient okHttpClient, LanguageService languageService) {
         this.okHttpClient = okHttpClient;
@@ -40,7 +41,7 @@ public class VersionService {
             return;
         }
 
-        String version = prop.getProperty("Implementation-Version", "?.?.?");
+        this.version = prop.getProperty("Implementation-Version", "?.?.?");
         build = new Date(Long.parseLong(prop.getProperty("Build-Time", "0")));
 
         log.info(languageService.get("service.version.used_version", version, build));
@@ -51,7 +52,7 @@ public class VersionService {
     public boolean checkUpdate(JsonObject jsonObject, boolean sendLog) {
         Date publishedAt = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ssX").parse(jsonObject.get("published_at").getAsString());
 
-        if (publishedAt.getTime() > build.getTime()) {
+        if (publishedAt.getTime() > build.getTime() && !jsonObject.get("tag_name").getAsString().equals(version)) {
             if (sendLog) {
                 log.info("=======================================");
                 log.info("");
