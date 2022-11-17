@@ -65,7 +65,7 @@ public class InGamePresence extends PresenceState {
                 }
             }
         } catch (IOException e) {
-            e.printStackTrace();
+            log.error("Error!", e);
         }
 
         if (configComponent.getEntityById("showagent", ConfigBoolean.class).getValue() && !playerAgentId.isEmpty() && !playerAgentId.isBlank()) {

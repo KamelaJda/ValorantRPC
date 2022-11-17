@@ -38,5 +38,6 @@
 
 ### Useful links
 - [Download last version](https://github.com/KamelaJda/ValorantRPC/releases)
+- [Translate](https://crowdin.com/project/valorantrpc/)
 - [Report a bug](https://github.com/KamelaJda/ValorantRPC/issues/new?assignees=KamelaJda&labels=bug&template=bug_report.md&title=%5BBUG%5D)
 - [Feature request](https://github.com/KamelaJda/ValorantRPC/issues/new?assignees=KamelaJda&labels=feature&template=feature_request.md&title=%5BFEATURE%5D)

@@ -88,7 +88,7 @@ public class WebsocketService {
 
                 webSocketClient.setSocketFactory(sslSocketFactory);
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("Error!", e);
             }
             webSocketClient.connect();
             return CompletableFuture.completedFuture(true);

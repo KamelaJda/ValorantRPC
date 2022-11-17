@@ -1,6 +1,7 @@
 package me.kamelajda.valorantrpc.presences.menu;
 
 import de.jcm.discordgamesdk.activity.Activity;
+import lombok.extern.slf4j.Slf4j;
 import me.kamelajda.valorantrpc.dto.SocketData;
 import me.kamelajda.valorantrpc.services.DiscordService;
 import me.kamelajda.valorantrpc.services.LanguageService;
@@ -10,6 +11,7 @@ import me.kamelajda.valorantrpc.utils.PresenceState;
 
 import java.text.ParseException;
 
+@Slf4j
 public class QueuePresence extends PresenceState {
 
     public QueuePresence(DiscordService discordService, LanguageService languageService) {
@@ -30,7 +32,7 @@ public class QueuePresence extends PresenceState {
         try {
             activity.timestamps().setStart(DataUtils.formatDate(socketData.getStateDetails().getQueueEntryTime()));
         } catch (ParseException e) {
-            e.printStackTrace();
+            log.error("Error!", e);
         }
 
         getDiscordService().updateRP(activity);

@@ -56,7 +56,7 @@ public class DiscordService {
         states.add(new StartingPresence(this, languageService));
         states.add(new AwayPresence(this, languageService));
         states.add(new QueuePresence(this, languageService));
-        states.add(new InMenuPresence(this, languageService));
+        states.add(new InMenuPresence(this, languageService, configComponent));
         states.add(new InGamePresence(this, lockFileService, languageService, configComponent));
         states.add(new PreGamePresence(this, lockFileService, languageService));
 
